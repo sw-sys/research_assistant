@@ -6,6 +6,7 @@
 # langchain community hub
 # langchain tuts https://python.langchain.com/docs/tutorials/
 # langchain how tos https://python.langchain.com/docs/how_to/
+# duckduckgo-search https://pypi.org/project/duckduckgo-search/
 
 import os
 
@@ -15,7 +16,7 @@ from langchain_core.output_parsers import PydanticOutputParser
 from langchain_core.prompts import ChatPromptTemplate
 from pydantic import BaseModel
 from langchain.agents import create_tool_calling_agent, AgentExecutor
-from tools import search_tool
+from tools import search_tool, wiki_tool, save_tool
 
 load_dotenv()
 
@@ -47,7 +48,7 @@ prompt = ChatPromptTemplate.from_messages(
             """
             You are a research assistant that will help generate a research paper.
             Answer the user query by using neceassary tools where appropriate.
-            Wrap the output in this format and provide no other text\n{format_instructions}
+            Wrap the output in this format and provide no other text {format_instructions}
             """,
         ),
         ("placeholder", "{chat_history}"),
@@ -57,7 +58,7 @@ prompt = ChatPromptTemplate.from_messages(
 ).partial(format_instructions=parser.get_format_instructions())
 
 # create tool calling agent
-tools = [search_tools]
+tools = [search_tool, wiki_tool, save_tool]
 agent = create_tool_calling_agent(
     llm=llm,
     prompt=prompt,
@@ -68,7 +69,7 @@ agent = create_tool_calling_agent(
 agent_executor = AgentExecutor(agent=agent, tools=tools, verbose=True)
 raw_response = agent_executor.invoke(
     {"query": input("Enter your topic to research: ")})
-print(raw_response)
+# print(raw_response)
 
 # parse the raw_response in to the ResearchResponse structure
 try:

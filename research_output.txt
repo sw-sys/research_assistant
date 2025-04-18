@@ -1,0 +1,19 @@
+--- Research Output ---
+Timestamp: 2025-04-18 01:54:29
+
+{
+  "topic": "Keeping Canada Geese as Pets in the UK",
+  "summary": "Keeping Canada geese as pets in the UK is highly regulated and generally difficult due to legal restrictions. Canada geese are protected under the Wildlife and Countryside Act 1981, which makes it illegal to capture, keep, or otherwise disturb these birds without proper licensing. The Animal and Plant Health Agency (APHA) oversees the licensing process for keeping such birds. To legally keep Canada geese as pets, individuals must obtain specific licenses that outline strict conditions for their care, including suitable housing and welfare requirements. It's important to note that not everyone is eligible to keep Canada geese as pets, and the licensing process is rigorous. Additionally, as of recent regulations, anyone in Great Britain who keeps birds must register with the APHA before specific deadlines (October 1, 2024, in England and Wales, and between September 1 and December 1 in Scotland). While Canada geese are considered non-native species in the UK, their population has more than doubled since 1984, and they remain protected. Any attempt to keep these birds without proper authorization could result in legal penalties.",
+  "sources": [
+    "Wildlife and Countryside Act 1981",
+    "Animal and Plant Health Agency (APHA) regulations",
+    "Royal Society for the Protection of Birds (RSPB) guidelines",
+    "UK bird registration requirements"
+  ],
+  "tools_used": [
+    "search",
+    "wikipedia",
+    "save_text_to_file"
+  ]
+}
+
